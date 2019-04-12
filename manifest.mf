@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Main-Class: cn.settile.autofish.Setup.Main
+TweakClass: cn.settile.autofish.autoFishTweaker
+TweakOrder: -1000
+TweakAuthor: 709924470^Kii-Akatsuki
