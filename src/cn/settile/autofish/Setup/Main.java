@@ -24,13 +24,13 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 		CodeSource codeSource = Main.class.getProtectionDomain().getCodeSource();
 		pth = new File(codeSource.getLocation().toURI().getPath()).getAbsolutePath();
-		//JOptionPane.showMessageDialog(null, "´íÎó!\n" + pth,  "¾¯¸æ",JOptionPane.ERROR_MESSAGE);
+		//JOptionPane.showMessageDialog(null, "ï¿½ï¿½ï¿½ï¿½!\n" + pth,  "ï¿½ï¿½ï¿½ï¿½",JOptionPane.ERROR_MESSAGE);
 		JFrame f = new JFrame("AutoFish Installer");
 		JPanel p = new JPanel(new GridLayout(0,1,0,1));
-		p.add(new JLabel("Ñ¡ÔñÒª°²×°µ½µÄMinecraft 1.13.2µÄ.minecraftÎÄ¼þ¼Ð: "));
+		p.add(new JLabel("Ñ¡ï¿½ï¿½Òªï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½Minecraft 1.13.2ï¿½ï¿½.minecraftï¿½Ä¼ï¿½ï¿½ï¿½: "));
 		jta = new JTextField();
 		jta.setEnabled(false);
-		JButton jb = new JButton("Ñ¡ÔñÎÄ¼þ¼Ð");
+		JButton jb = new JButton("Ñ¡ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½");
 		jb.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
@@ -39,27 +39,27 @@ public class Main {
 		        f.showSaveDialog(null);
 		        String pth = f.getSelectedFile().getAbsolutePath();
 		        if(!Main.isValidFolder(pth)) {
-		        	JOptionPane.showMessageDialog(null, "²»ÊÇÓÐÐ§µÄÎÄ¼þ¼Ð!", "¾¯¸æ", JOptionPane.ERROR_MESSAGE);
+		        	JOptionPane.showMessageDialog(null, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½!", "ï¿½ï¿½ï¿½ï¿½", JOptionPane.ERROR_MESSAGE);
 		        	return;
 		        }
 		        jta.setText(pth);
 				jb1.setEnabled(true);
 			}
 		});
-		jb1 = new JButton("°²×°µ½Õâ¸ö°æ±¾");
+		jb1 = new JButton("ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ±¾");
 		jb1.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				launcher l = Main.launcherType(jta.getText());
-				//JOptionPane.showMessageDialog(null, "l="+l.name(),  "¾¯¸æ",JOptionPane.ERROR_MESSAGE);
+				//JOptionPane.showMessageDialog(null, "l="+l.name(),  "ï¿½ï¿½ï¿½ï¿½",JOptionPane.ERROR_MESSAGE);
 				if(l == launcher.vanilla) {
-					JOptionPane.showMessageDialog(null, "ÕýÔÚÏòÔ­°æ(ÆäËû)MCÆô¶¯Æ÷°²×°×Ô¶¯µöÓãMOD", "ÌáÊ¾", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½)MCï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½MOD", "ï¿½ï¿½Ê¾", JOptionPane.INFORMATION_MESSAGE);
 					Main.install(jta.getText(), l);
 				}else if(l == launcher.multimc) {
-					JOptionPane.showMessageDialog(null, "ÕýÔÚÏòMultiMCÆô¶¯Æ÷°²×°×Ô¶¯µöÓãMOD", "ÌáÊ¾", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½MultiMCï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½MOD", "ï¿½ï¿½Ê¾", JOptionPane.INFORMATION_MESSAGE);
 					Main.install(jta.getText(), l);
 				}else {
-					JOptionPane.showMessageDialog(null, "²»ÊÇÓÐÐ§µÄÎÄ¼þ¼Ð!",  "¾¯¸æ",JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½!",  "ï¿½ï¿½ï¿½ï¿½",JOptionPane.ERROR_MESSAGE);
 				}
 			}
 		});
@@ -113,10 +113,10 @@ public class Main {
 				FileOutputStream fos = new FileOutputStream(json);
 				fos.write(s.getBytes());
 				fos.close();
-				JOptionPane.showMessageDialog(null, "°²×°Íê³É",  "ÌáÊ¾",JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, "ï¿½ï¿½×°ï¿½ï¿½ï¿½",  "ï¿½ï¿½Ê¾",JOptionPane.INFORMATION_MESSAGE);
 			} catch (Exception e) {
 				e.printStackTrace();
-				JOptionPane.showMessageDialog(null, "´íÎó!\n" + e.getLocalizedMessage(),  "¾¯¸æ",JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "ï¿½ï¿½ï¿½ï¿½!\n" + e.getLocalizedMessage(),  "ï¿½ï¿½ï¿½ï¿½",JOptionPane.ERROR_MESSAGE);
 			}
 		}else if(l == launcher.multimc) {
 			path = new File(path).getParent();
@@ -155,10 +155,10 @@ public class Main {
 				FileOutputStream fos = new FileOutputStream(json);
 				fos.write(s.getBytes());
 				fos.close();
-				JOptionPane.showMessageDialog(null, "°²×°Íê³É",  "ÌáÊ¾",JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, "ï¿½ï¿½×°ï¿½ï¿½ï¿½",  "ï¿½ï¿½Ê¾",JOptionPane.INFORMATION_MESSAGE);
 			} catch (Exception e) {
 				e.printStackTrace();
-				JOptionPane.showMessageDialog(null, "´íÎó!\n" + e.getStackTrace(),  "¾¯¸æ",JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "ï¿½ï¿½ï¿½ï¿½!\n" + e.getStackTrace(),  "ï¿½ï¿½ï¿½ï¿½",JOptionPane.ERROR_MESSAGE);
 			}
 		}
 	}
